@@ -204,7 +204,7 @@ code{ background: rgba(255,255,255,.08); padding:.1rem .35rem; border-radius: .4
 
 .nav{
   position: sticky;
-  top: 3px;
+  top: 3px; /* dưới progress bar */
   z-index: 40;
   background: rgba(11,7,19,.70);
   backdrop-filter: blur(12px);
@@ -514,6 +514,7 @@ input:focus, textarea:focus{
   transform: translateY(0);
 }
 
+/* Mobile nav mode */
 .nav.is-drawer{
   position: fixed;
   top: 12px;
@@ -549,30 +550,32 @@ input:focus, textarea:focus{
   *{ transition: none !important; }
   html{ scroll-behavior: auto; }
 }
+/* Fix: cho modal scroll nội bộ khi nội dung dài */
 .modal{
-  overflow: auto;
-  overscroll-behavior: contain;
+  overflow: auto;                 /* cho phép cuộn bên trong modal layer */
+  overscroll-behavior: contain;   /* không "kéo" làm cuộn nền */
 }
 
 .modal__panel{
-  max-height: calc(100vh - 120px);
+  max-height: calc(100vh - 120px); /* giới hạn theo chiều cao màn hình */
   display: flex;
   flex-direction: column;
-  margin: 8vh auto 0;
+  margin: 8vh auto 0;             /* giảm xuống để không bị quá cao */
 }
 
 .modal__head,
 .modal__foot{
-  flex: 0 0 auto;
+  flex: 0 0 auto;                 /* cố định header/footer */
 }
 
 .modal__content{
-  flex: 1 1 auto;
-  overflow-y: auto;
+  flex: 1 1 auto;                 /* phần content chiếm phần còn lại */
+  overflow-y: auto;               /* cuộn ở đây */
   -webkit-overflow-scrolling: touch;
   padding-bottom: 6px;
 }
 
+/* optional: scrollbar gọn (Windows/Chrome) */
 .modal__content::-webkit-scrollbar{ width: 10px; }
 .modal__content::-webkit-scrollbar-thumb{
   background: rgba(167,139,250,.25);
@@ -583,15 +586,15 @@ input:focus, textarea:focus{
 
 .card__thumb{
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;      /* hoặc 16/9 tuỳ bạn */
   border-radius: 18px;
-  overflow: hidden;
+  overflow: hidden;          /* QUAN TRỌNG: cắt phần thừa theo viền */
 }
 
 .card__thumb img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center; 
-  display: block; 
+  object-fit: cover;         /* fill khung, cắt bớt phần thừa */
+  object-position: center;   /* canh giữa */
+  display: block;            /* bỏ khe hở dưới ảnh */
 }
