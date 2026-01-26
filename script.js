@@ -17,7 +17,8 @@ const formHint = $("#formHint");
 let lastFocused = null;
 
 // Set year
-yearEl.textContent = new Date().getFullYear();
+// (Một số bản layout có thể bỏ footer/year)
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Scroll progress
 function updateProgress() {
@@ -25,7 +26,7 @@ function updateProgress() {
   const scrollTop = doc.scrollTop || document.body.scrollTop;
   const scrollHeight = doc.scrollHeight - doc.clientHeight;
   const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-  progressBar.style.width = `${pct}%`;
+  if (progressBar) progressBar.style.width = `${pct}%`;
 }
 window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
@@ -68,9 +69,9 @@ navLinks.forEach(a => {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
 
     // close mobile drawer
-    if (nav.classList.contains("is-drawer")) {
+    if (nav && nav.classList.contains("is-drawer")) {
       nav.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
+      if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
     }
   });
 });
@@ -78,29 +79,35 @@ navLinks.forEach(a => {
 // Mobile menu behavior
 function setNavMode() {
   const isMobile = window.matchMedia("(max-width: 980px)").matches;
+  if (!nav) return;
   nav.classList.toggle("is-drawer", isMobile);
   if (!isMobile) {
     nav.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
   }
 }
 window.addEventListener("resize", setNavMode);
 setNavMode();
 
-menuBtn.addEventListener("click", () => {
-  if (!nav.classList.contains("is-drawer")) return;
-  const isOpen = nav.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-});
+// NOTE: Nếu bạn đã xoá nút menu khỏi HTML (menuBtn không tồn tại),
+// phần dưới sẽ tự bỏ qua để tránh lỗi JS làm "chết" toàn bộ tương tác.
+if (menuBtn) {
+  menuBtn.addEventListener("click", () => {
+    if (!nav || !nav.classList.contains("is-drawer")) return;
+    const isOpen = nav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+}
 
 // Modal open/close
 function openModal() {
   lastFocused = document.activeElement;
+  if (!modal) return;
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
   // focus close button for accessibility
-  closeModalBtn.focus({ preventScroll: true });
+  if (closeModalBtn) closeModalBtn.focus({ preventScroll: true });
 }
 
 function closeModal() {
@@ -119,7 +126,7 @@ modal?.addEventListener("click", (e) => {
 });
 
 window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  if (e.key === "Escape" && modal && modal.classList.contains("is-open")) closeModal();
 });
 
 // Accordion
