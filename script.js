@@ -16,10 +16,9 @@ const formHint = $("#formHint");
 
 let lastFocused = null;
 
-// Set year
 yearEl.textContent = new Date().getFullYear();
 
-// Scroll progress
+
 function updateProgress() {
   const doc = document.documentElement;
   const scrollTop = doc.scrollTop || document.body.scrollTop;
@@ -30,7 +29,6 @@ function updateProgress() {
 window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
 
-// Reveal on scroll
 const revealEls = $$("[data-reveal]");
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
@@ -40,7 +38,6 @@ const io = new IntersectionObserver((entries) => {
 
 revealEls.forEach((el) => io.observe(el));
 
-// Active nav link while scrolling
 const sections = navLinks
   .map(a => $(a.getAttribute("href")))
   .filter(Boolean);
@@ -75,7 +72,6 @@ navLinks.forEach(a => {
   });
 });
 
-// Mobile menu behavior
 function setNavMode() {
   const isMobile = window.matchMedia("(max-width: 980px)").matches;
   nav.classList.toggle("is-drawer", isMobile);
@@ -93,7 +89,6 @@ menuBtn.addEventListener("click", () => {
   menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
 });
 
-// Modal open/close
 function openModal() {
   lastFocused = document.activeElement;
   modal.classList.add("is-open");
@@ -143,20 +138,10 @@ accButtons.forEach((btn) => {
   });
 });
 
-// Demo "podPlay" buttons (placeholder)
 $$(".podPlay").forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.textContent = btn.textContent.includes("▶") ? "⏸ Tạm dừng" : "▶ Nghe thử";
-    // Khi bạn gắn <audio> thật: tìm audio gần nhất và play/pause tại đây.
-    // const card = btn.closest(".pod");
-    // const audio = card?.querySelector("audio");
-    // if (audio) (audio.paused ? audio.play() : audio.pause());
+
   });
 });
 
-// Fake submit (front-end only)
-form?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  formHint.textContent = "✅ Đã nhận form (demo). Nếu muốn gửi thật, bạn nối backend hoặc dịch vụ form.";
-  form.reset();
-});

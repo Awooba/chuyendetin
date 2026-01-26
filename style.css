@@ -130,7 +130,7 @@ code{ background: rgba(255,255,255,.08); padding:.1rem .35rem; border-radius: .4
   width: fit-content;
 }
 .hero__title{
-  margin: 14px 0 10px;
+  margin: 30px 0 10px;
   font-size: clamp(2.1rem, 3.6vw, 3.3rem);
   line-height: 1.05;
   letter-spacing: -0.6px;
@@ -204,7 +204,7 @@ code{ background: rgba(255,255,255,.08); padding:.1rem .35rem; border-radius: .4
 
 .nav{
   position: sticky;
-  top: 74px; /* dưới topbar */
+  top: 3px;
   z-index: 40;
   background: rgba(11,7,19,.70);
   backdrop-filter: blur(12px);
@@ -239,6 +239,7 @@ code{ background: rgba(255,255,255,.08); padding:.1rem .35rem; border-radius: .4
 
 .section{
   padding: 44px 0;
+  scroll-margin-top: 86px; /* chừa chỗ cho nav sticky */
 }
 .section--alt{
   background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
@@ -513,10 +514,9 @@ input:focus, textarea:focus{
   transform: translateY(0);
 }
 
-/* Mobile nav mode */
 .nav.is-drawer{
   position: fixed;
-  top: 72px;
+  top: 12px;
   left: 14px;
   right: 14px;
   border-radius: 18px;
@@ -542,43 +542,56 @@ input:focus, textarea:focus{
   .overview{ grid-template-columns: 1fr; }
   .podcast-grid{ grid-template-columns: 1fr; }
   .form__row{ grid-template-columns: 1fr; }
-  .nav{ top: 72px; }
+  .nav{ top: 3px; }
 }
 
 @media (prefers-reduced-motion: reduce){
   *{ transition: none !important; }
   html{ scroll-behavior: auto; }
 }
-/* Fix: cho modal scroll nội bộ khi nội dung dài */
 .modal{
-  overflow: auto;                 /* cho phép cuộn bên trong modal layer */
-  overscroll-behavior: contain;   /* không "kéo" làm cuộn nền */
+  overflow: auto;
+  overscroll-behavior: contain;
 }
 
 .modal__panel{
-  max-height: calc(100vh - 120px); /* giới hạn theo chiều cao màn hình */
+  max-height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
-  margin: 8vh auto 0;             /* giảm xuống để không bị quá cao */
+  margin: 8vh auto 0;
 }
 
 .modal__head,
 .modal__foot{
-  flex: 0 0 auto;                 /* cố định header/footer */
+  flex: 0 0 auto;
 }
 
 .modal__content{
-  flex: 1 1 auto;                 /* phần content chiếm phần còn lại */
-  overflow-y: auto;               /* cuộn ở đây */
+  flex: 1 1 auto;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 6px;
 }
 
-/* optional: scrollbar gọn (Windows/Chrome) */
 .modal__content::-webkit-scrollbar{ width: 10px; }
 .modal__content::-webkit-scrollbar-thumb{
   background: rgba(167,139,250,.25);
   border: 2px solid rgba(0,0,0,0);
   background-clip: padding-box;
   border-radius: 999px;
+}
+
+.card__thumb{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.card__thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+  display: block; 
 }

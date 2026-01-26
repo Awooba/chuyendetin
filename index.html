@@ -12,29 +12,17 @@
 </head>
 
 <body>
-  <!-- Scroll progress -->
   <div class="scroll-progress" aria-hidden="true">
     <div class="scroll-progress__bar" id="progressBar"></div>
-  </div>
-
-  <!-- Top header -->
-  <header class="topbar" id="top">
-    <div class="container topbar__inner">
-      <a class="brand" href="#home" aria-label="Về trang chủ">
-        <span class="brand__logo" aria-hidden="true">CH</span>
-        <span class="brand__text">
-          <span class="brand__name">CareerHub</span>
-          <span class="brand__tag">Giới thiệu nghề nghiệp</span>
-        </span>
-      </a>
-
-      <button class="icon-btn" id="menuBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="siteNav">
-        <span class="icon-btn__bars" aria-hidden="true"></span>
-      </button>
+  <nav class="nav" id="siteNav" aria-label="Điều hướng">
+    <div class="container nav__inner">
+      <a class="nav__link is-active" href="#tongquan">Tổng quan</a>
+      <a class="nav__link" href="#podcast">Podcast</a>
+      <a class="nav__link" href="#su-that">Sự thật thú vị</a>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero / Banner -->
+  </div>
   <section class="hero" id="home">
     <div class="container hero__inner">
       <div class="hero__copy" data-reveal>
@@ -69,18 +57,7 @@
 
       
   </section>
-
-  <!-- Menu -->
-  <nav class="nav" id="siteNav" aria-label="Điều hướng">
-    <div class="container nav__inner">
-      <a class="nav__link is-active" href="#tongquan">Tổng quan</a>
-      <a class="nav__link" href="#podcast">Podcast</a>
-      <a class="nav__link" href="#su-that">Sự thật thú vị</a>
-    </div>
-  </nav>
-
   <main>
-    <!-- Tổng quan -->
     <section class="section" id="tongquan">
       <div class="container">
         <div class="section__head" data-reveal>
@@ -92,10 +69,11 @@
 
         <div class="overview">
           <div class="overview__media card" data-reveal>
-            <!-- Bạn tự thay ảnh ở đây -->
-            <div class="placeholder placeholder--tall">
-              <span>Vùng ảnh minh họa</span>
-              <small>(thay ảnh sau)</small>
+            <div class="placeholder placeholder--tall"> 
+              <img src="anhtq.png" alt="ABCDXYZ" style="
+                  width: 500px;
+                  height: 500px;
+              ">
             </div>
           </div>
 
@@ -120,8 +98,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Podcast -->
     <section class="section section--alt" id="podcast">
       <div class="container">
         <div class="section__head" data-reveal>
@@ -134,61 +110,50 @@
         <div class="podcast-grid">
           <article class="pod card" data-reveal>
             <div class="pod__cover">
-              <div class="placeholder">
-                <span>Cover tập 01</span>
-                <small>(ảnh/audio tự chèn)</small>
-              </div>
+              <img src="podcast1.png" alt="podcast1" style="width: 340px;">
             </div>
             <div class="pod__body">
               <h3 class="pod__title">Tập 01 — Mô tả ngắn</h3>
               <p class="muted">HỌ LÀ AI & LÀM GÌ MỖI NGÀY?</p>
-
-              <!-- Bạn tự thay src audio -->
-              <!-- <audio class="pod__audio" controls src="audio/ep01.mp3"></audio> -->
+              <audio class="pod__audio" controls src="HOLAAI.mp3"></audio>
             </div>
           </article>
 
           <article class="pod card" data-reveal>
             <div class="pod__cover">
               <div class="placeholder">
-                <span>Cover tập 02</span>
-                <small>(ảnh/audio tự chèn)</small>
+                <img src="podcast2.jpg" alt="podcast2" style="width: 250px;">
               </div>
             </div>
             <div class="pod__body">
               <h3 class="pod__title">Tập 02 — Mô tả ngắn</h3>
               <p class="muted">NETWORK ADMINISTRATOR CÓ CẦN GIỎI TOÁN KHÔNG?</p>
-              <!-- <audio class="pod__audio" controls src="audio/ep02.mp3"></audio> -->
+               <audio class="pod__audio" controls src="COCANGIOITOAN.mp3"></audio>
             </div>
           </article>
 
           <article class="pod card" data-reveal>
             <div class="pod__cover">
               <div class="placeholder">
-                <span>Cover tập 03</span>
-                <small>(ảnh/audio tự chèn)</small>
+                <img src="podcast3.png" alt="podcast3" style="width: 250px;">
               </div>
             </div>
             <div class="pod__body">
               <h3 class="pod__title">Tập 03 — Mô tả ngắn</h3>
               <p class="muted">NETWORK ADMINISTRATOR CÓ CẦN BIẾT LẬP TRÌNH KHÔNG?</p>
-              <!-- <audio class="pod__audio" controls src="audio/ep03.mp3"></audio> -->
+              <audio class="pod__audio" controls src="COCANGIOILAPTRINH.mp3"></audio>
             </div>
           </article>
         </div>
 
       </div>
     </section>
-
-    <!-- Những sự thật thú vị -->
     <section class="section" id="su-that">
       <div class="container">
         <div class="section__head" data-reveal>
           <h2 class="section__title">Những sự thật thú vị về nghề</h2>
         </div>
-
         <div class="accordion card" data-reveal>
-  <!-- 1 -->
   <button class="acc__btn" aria-expanded="false">
     <span>1) Một ngày điển hình trong nghề này diễn ra thế nào?</span>
     <span class="acc__icon" aria-hidden="true"></span>
@@ -207,8 +172,6 @@
       <b>Nguyên tắc vàng:</b> ưu tiên “khôi phục dịch vụ” trước, sau đó mới “đào sâu root cause” để tránh tái diễn.
     </div>
   </div>
-
-  <!-- 2 -->
   <button class="acc__btn" aria-expanded="false">
     <span>2) Kỹ năng quan trọng nhất là gì?</span>
     <span class="acc__icon" aria-hidden="true"></span>
@@ -229,8 +192,6 @@
       <b>Mẹo học nhanh:</b> mỗi lần gặp lỗi, ghi “Triệu chứng → Giả thuyết → Test → Kết luận → Fix” thành 1 case study.
     </div>
   </div>
-
-  <!-- 3 (ĐÃ THAY NỘI DUNG) -->
   <button class="acc__btn" aria-expanded="false">
     <span>3) Những lỗi “kinh điển” và cách xử lý nhanh?</span>
     <span class="acc__icon" aria-hidden="true"></span>
@@ -261,12 +222,8 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>© <span id="year"></span> CareerHub. All rights reserved.</span>
-      <span class="footer__right">Made with 💜</span>
     </div>
   </footer>
-
-  <!-- Modal: Xem chi tiết -->
   <div class="modal" id="detailModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Chi tiết nghề nghiệp">
     <div class="modal__overlay" data-close="true"></div>
     <div class="modal__panel" role="document">
