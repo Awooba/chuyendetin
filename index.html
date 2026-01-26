@@ -1,76 +1,412 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Career</title>
+  <meta name="description" content="Website giới thiệu nghề nghiệp — giao diện tím hiện đại, mượt và tương tác." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <main class="page">
-    <!-- Đầu trang -->
-    <header class="box topbar">
-      Đầu trang (logo, tên trang - tên nghề)
-    </header>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="progressBar"></div>
+  </div>
 
-    <!-- Banner -->
-    <section class="box banner">
-      Banner (ảnh banner, logo, tên trang, slogan)
-    </section>
+  <!-- Top header -->
+  <header class="topbar" id="top">
+    <div class="container topbar__inner">
+      <a class="brand" href="#home" aria-label="Về trang chủ">
+        <span class="brand__logo" aria-hidden="true">CH</span>
+        <span class="brand__text">
+          <span class="brand__name">CareerHub</span>
+          <span class="brand__tag">Giới thiệu nghề nghiệp</span>
+        </span>
+      </a>
 
-    <!-- Menu -->
-    <nav class="box menu">
-      Menu
-    </nav>
+      <button class="icon-btn" id="menuBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="siteNav">
+        <span class="icon-btn__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
 
+  <!-- Hero / Banner -->
+  <section class="hero" id="home">
+    <div class="container hero__inner">
+      <div class="hero__copy" data-reveal>
+        <h1 class="hero__title">
+          Khám phá một nghề — <span class="grad">Network Administrator</span>
+        </h1>
+        <p class="hero__desc">
+          Mô tả ngắn về nghề: công việc làm gì, vì sao đáng theo, và phù hợp với ai.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#tongquan">Bắt đầu</a>
+          <a class="btn btn--ghost" href="#podcast">Xem Podcast</a>
+        </div>
+
+        <div class="hero__stats" data-reveal>
+          <div class="stat">
+            <div class="stat__num">1.</div>
+            <div class="stat__label">Tổng Quan</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">2.</div>
+            <div class="stat__label">Podcast Về Nghề</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">3.
+            </div>
+            <div class="stat__label">Những Điều Thú Vị</div>
+          </div>
+        </div>
+      </div>
+
+      
+  </section>
+
+  <!-- Menu -->
+  <nav class="nav" id="siteNav" aria-label="Điều hướng">
+    <div class="container nav__inner">
+      <a class="nav__link is-active" href="#tongquan">Tổng quan</a>
+      <a class="nav__link" href="#podcast">Podcast</a>
+      <a class="nav__link" href="#su-that">Sự thật thú vị</a>
+    </div>
+  </nav>
+
+  <main>
     <!-- Tổng quan -->
-    <section class="overview">
-      <div class="overview__title">Tổng quan</div>
+    <section class="section" id="tongquan">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Tổng quan</h2>
+          <p class="section__subtitle">
+            Ảnh bên trái, nội dung bên phải (đúng như khung bạn gửi). Nút “Xem chi tiết” mở modal.
+          </p>
+        </div>
 
-      <div class="overview__grid">
-        <div class="overview__img">Ảnh</div>
+        <div class="overview">
+          <div class="overview__media card" data-reveal>
+            <!-- Bạn tự thay ảnh ở đây -->
+            <div class="placeholder placeholder--tall">
+              <span>Vùng ảnh minh họa</span>
+              <small>(thay ảnh sau)</small>
+            </div>
+          </div>
 
-        <div class="overview__content">
-          <div class="overview__heading">Tiêu đề</div>
-          <div>Nội dung</div>
-          <button class="btn" type="button">Nút xem chi tiết</button>
+          <div class="overview__content card" data-reveal>
+            <h3 class="h3">Tiêu đề nội dung</h3>
+            <p class="muted">
+              Network Admin là người chẩn đoán, sửa nhanh, và phòng ngừa để mọi bộ phận làm việc trơn tru.
+            </p>
+
+            <ul class="bullets">
+              <li><b>Nhiệm vụ chính:</b> vận hành & giám sát hệ thống mạng (LAN/WAN/Wi-Fi), cấu hình router/switch/firewall, quản lý VPN, phân quyền truy cập, xử lý sự cố và tối ưu hiệu năng.</li>
+              <li><b>Kỹ năng lõi:</b> TCP/IP, subnetting, VLAN, routing/switching, DNS/DHCP, NAT, VPN, firewall rules; tư duy troubleshooting; đọc log; bảo mật cơ bản.</li>
+              <li><b>Công cụ thường dùng:</b> Cisco/MikroTik/Juniper (tuỳ môi trường), firewall (Fortinet/Palo Alto…), Wireshark, ping/traceroute, SSH, Zabbix/PRTG, syslog, diagram (Visio/draw.io).</li>
+              <li><b>Phù hợp với:</b> người có tư duy logic cao, thích giải quyết vấn đề nhanh chóng và có khả năng làm việc độc lập hoặc nhóm.</li>
+            </ul>
+
+            <div class="actions">
+              <button class="btn btn--primary" id="openDetail">Xem chi tiết</button>
+              <a class="btn btn--ghost" href="#su-that">Xem sự thật thú vị</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Podcast -->
-    <section class="podcast">
-      <div class="podcast__title">Podcast</div>
+    <section class="section section--alt" id="podcast">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Podcast</h2>
+          <p class="section__subtitle">
+            Bạn tự chèn audio vào từng thẻ. Khung đã có hover + reveal mượt.
+          </p>
+        </div>
 
-      <div class="podcast__grid">
-        <article class="podcard">
-          <div class="podcard__head">Mô tả ngắn</div>
-          <div class="podcard__body">Nội Dung chưa điền</div>
-        </article>
+        <div class="podcast-grid">
+          <article class="pod card" data-reveal>
+            <div class="pod__cover">
+              <div class="placeholder">
+                <span>Cover tập 01</span>
+                <small>(ảnh/audio tự chèn)</small>
+              </div>
+            </div>
+            <div class="pod__body">
+              <h3 class="pod__title">Tập 01 — Mô tả ngắn</h3>
+              <p class="muted">HỌ LÀ AI & LÀM GÌ MỖI NGÀY?</p>
 
-        <article class="podcard">
-          <div class="podcard__head">Mô tả ngắn</div>
-          <div class="podcard__body">Nội Dung chưa điền</div>
-        </article>
+              <!-- Bạn tự thay src audio -->
+              <!-- <audio class="pod__audio" controls src="audio/ep01.mp3"></audio> -->
+            </div>
+          </article>
 
-        <article class="podcard">
-          <div class="podcard__head">Mô tả ngắn</div>
-          <div class="podcard__body">Nội Dung chưa điền</div>
-        </article>
+          <article class="pod card" data-reveal>
+            <div class="pod__cover">
+              <div class="placeholder">
+                <span>Cover tập 02</span>
+                <small>(ảnh/audio tự chèn)</small>
+              </div>
+            </div>
+            <div class="pod__body">
+              <h3 class="pod__title">Tập 02 — Mô tả ngắn</h3>
+              <p class="muted">NETWORK ADMINISTRATOR CÓ CẦN GIỎI TOÁN KHÔNG?</p>
+              <!-- <audio class="pod__audio" controls src="audio/ep02.mp3"></audio> -->
+            </div>
+          </article>
+
+          <article class="pod card" data-reveal>
+            <div class="pod__cover">
+              <div class="placeholder">
+                <span>Cover tập 03</span>
+                <small>(ảnh/audio tự chèn)</small>
+              </div>
+            </div>
+            <div class="pod__body">
+              <h3 class="pod__title">Tập 03 — Mô tả ngắn</h3>
+              <p class="muted">NETWORK ADMINISTRATOR CÓ CẦN BIẾT LẬP TRÌNH KHÔNG?</p>
+              <!-- <audio class="pod__audio" controls src="audio/ep03.mp3"></audio> -->
+            </div>
+          </article>
+        </div>
+
       </div>
     </section>
 
-    <!-- Mindmap/Infographic + Những sự thật thú vị... -->
-    <section class="content-frame">
-      Khung nội dung (Những sự thật thú vị về nghề...) —
-      <span class="placeholder">Nội Dung chưa điền</span>
+    <!-- Những sự thật thú vị -->
+    <section class="section" id="su-that">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <h2 class="section__title">Những sự thật thú vị về nghề</h2>
+        </div>
+
+        <div class="accordion card" data-reveal>
+  <!-- 1 -->
+  <button class="acc__btn" aria-expanded="false">
+    <span>1) Một ngày điển hình trong nghề này diễn ra thế nào?</span>
+    <span class="acc__icon" aria-hidden="true"></span>
+  </button>
+  <div class="acc__panel" role="region">
+    <p class="muted">
+      Một ngày của Network Admin thường xoay quanh 3 việc: <b>giám sát</b> – <b>xử lý sự cố</b> – <b>tối ưu & phòng ngừa</b>.
+    </p>
+    <ul class="bullets">
+      <li><b>Sáng:</b> mở dashboard monitoring (Zabbix/PRTG), kiểm tra cảnh báo (mất link, latency, packet loss), xem ticket tồn.</li>
+      <li><b>Trong ngày:</b> xử lý yêu cầu: cấp VPN cho nhân sự mới, thêm VLAN/SSID, chỉnh firewall rule, mở port theo policy.</li>
+      <li><b>Khi có sự cố:</b> khoanh vùng nhanh (DNS/DHCP/VLAN/route/firewall) → test có kiểm soát → khôi phục dịch vụ trước.</li>
+      <li><b>Cuối ngày:</b> backup cấu hình thiết bị, cập nhật sơ đồ mạng, ghi change-log, lên kế hoạch bảo trì/firmware.</li>
+    </ul>
+    <div class="callout">
+      <b>Nguyên tắc vàng:</b> ưu tiên “khôi phục dịch vụ” trước, sau đó mới “đào sâu root cause” để tránh tái diễn.
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <button class="acc__btn" aria-expanded="false">
+    <span>2) Kỹ năng quan trọng nhất là gì?</span>
+    <span class="acc__icon" aria-hidden="true"></span>
+  </button>
+  <div class="acc__panel" role="region">
+    <p class="muted">
+      Không chỉ là cấu hình thiết bị — thứ giúp bạn “lên trình” nhanh nhất là <b>tư duy troubleshooting</b> + nền <b>TCP/IP</b>.
+    </p>
+    <ul class="bullets">
+      <li><b>Tư duy khoanh vùng lỗi:</b> phân lớp (L1–L7), loại trừ dần, kiểm chứng bằng dữ liệu (log/packet/metrics).</li>
+      <li><b>TCP/IP & Subnetting:</b> IP, gateway, subnet mask, route table — sai 1 ly là “mất mạng” cả vùng.</li>
+      <li><b>Switching:</b> VLAN/trunk, STP, loop prevention (đây là lỗi “kinh điển” trong thực tế).</li>
+      <li><b>DNS/DHCP:</b> “mạng vẫn lên” nhưng không vào được web rất hay do DNS; máy không lấy IP do DHCP/lease.</li>
+      <li><b>Firewall/VPN:</b> đọc hiểu policy, rule order, NAT; biết set VPN remote access và phân quyền đúng.</li>
+      <li><b>Documentation:</b> vẽ sơ đồ mạng, ghi change-log, checklist vận hành — càng làm càng đỡ lỗi.</li>
+    </ul>
+    <div class="callout">
+      <b>Mẹo học nhanh:</b> mỗi lần gặp lỗi, ghi “Triệu chứng → Giả thuyết → Test → Kết luận → Fix” thành 1 case study.
+    </div>
+  </div>
+
+  <!-- 3 (ĐÃ THAY NỘI DUNG) -->
+  <button class="acc__btn" aria-expanded="false">
+    <span>3) Những lỗi “kinh điển” và cách xử lý nhanh?</span>
+    <span class="acc__icon" aria-hidden="true"></span>
+  </button>
+  <div class="acc__panel" role="region">
+    <p class="muted">
+      Dưới đây là các tình huống rất hay gặp. Điểm quan trọng: <b>xác định lớp nào đang lỗi</b> rồi mới ra tay.
+    </p>
+    <ul class="bullets">
+      <li><b>Máy “không có mạng” (No Internet):</b> kiểm tra IP nhận được chưa (DHCP), gateway đúng không, ping gateway → ping 8.8.8.8 → ping domain.</li>
+      <li><b>Vào được IP nhưng không vào web:</b> khả năng cao do <b>DNS</b> → đổi DNS/test nslookup/dig, kiểm tra DNS policy/firewall.</li>
+      <li><b>Wi-Fi chập chờn:</b> xem RSSI/kênh bị nhiễu, roaming; kiểm tra số client/AP, đổi channel/band steering (nếu có).</li>
+      <li><b>Mạng “đang nhanh tự nhiên lag”:</b> check interface utilization, lỗi duplex, broadcast storm, loop switch (STP), top talkers.</li>
+      <li><b>Một phòng ban không truy cập được tài nguyên:</b> thường do VLAN/ACL/firewall rule → kiểm tra tagging trunk, rule order, route giữa VLAN.</li>
+      <li><b>VPN vào được nhưng không truy cập nội bộ:</b> kiểm tra split-tunnel/full-tunnel, route push, policy từ VPN zone vào LAN.</li>
+    </ul>
+    <div class="callout">
+      <b>Checklist 60 giây:</b> Link/đèn cổng → IP/DHCP → Gateway → DNS → Route → Firewall/ACL → Packet capture (Wireshark).
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      Khung nội dung (Footer)
-    </footer>
+    
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> CareerHub. All rights reserved.</span>
+      <span class="footer__right">Made with 💜</span>
+    </div>
+  </footer>
+
+  <!-- Modal: Xem chi tiết -->
+  <div class="modal" id="detailModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Chi tiết nghề nghiệp">
+    <div class="modal__overlay" data-close="true"></div>
+    <div class="modal__panel" role="document">
+      <div class="modal__head">
+        <h3 class="modal__title">Chi tiết nghề nghiệp</h3>
+        <button class="icon-btn" id="closeModal" aria-label="Đóng">
+          ✕
+        </button>
+      </div>
+
+      <div class="modal__content">
+  <h4 style="margin:0 0 6px;font-size:1.25rem;">Network Administrator (Quản trị mạng)</h4>
+  <p class="muted" style="margin-top:0;">
+    Người đảm bảo hệ thống mạng (LAN/WAN/Wi-Fi/VPN/Firewall) hoạt động <b>ổn định</b>, <b>bảo mật</b> và <b>có thể mở rộng</b>.
+    Khi “mạng có vấn đề”, bạn là người tìm nguyên nhân nhanh — và sửa đúng chỗ.
+  </p>
+
+  <div class="tags" style="margin-top:10px;">
+    <span class="tag">LAN/WAN</span>
+    <span class="tag">VLAN</span>
+    <span class="tag">Routing</span>
+    <span class="tag">Firewall</span>
+    <span class="tag">VPN</span>
+    <span class="tag">Monitoring</span>
+    <span class="tag">Troubleshooting</span>
+  </div>
+
+  <div class="callout">
+    <b>Mindset của nghề:</b> “Đo đúng → đo đủ → khoanh vùng → thử nghiệm có kiểm soát → ghi log thay đổi”.
+  </div>
+
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.10);margin:14px 0;">
+
+  <h4 style="margin:0 0 8px;">Bạn sẽ làm gì hằng ngày?</h4>
+  <ul class="bullets" style="margin-top:8px;">
+    <li><b>Giám sát hệ thống:</b> theo dõi cảnh báo (mất link, latency, packet loss), kiểm tra dashboard monitoring.</li>
+    <li><b>Cấu hình & vận hành:</b> router/switch, VLAN, ACL, DHCP/DNS, NAT, Wi-Fi controller, VPN remote access.</li>
+    <li><b>Xử lý sự cố:</b> mất mạng, DHCP lỗi, DNS sai, loop switch, Wi-Fi chập chờn, route lệch, firewall chặn nhầm.</li>
+    <li><b>Bảo mật cơ bản:</b> phân quyền, segment mạng, cập nhật firmware theo lịch, backup cấu hình, ghi chép thay đổi.</li>
+  </ul>
+
+  <div class="mini-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px;">
+    <div class="card" style="padding:12px;">
+      <b>Nền tảng</b>
+      <p class="muted" style="margin:6px 0 0;">
+        TCP/IP, subnetting, OSI/TCP-IP, DNS/DHCP, NAT, IPv4/IPv6 (cơ bản)
+      </p>
+    </div>
+    <div class="card" style="padding:12px;">
+      <b>Thực chiến</b>
+      <p class="muted" style="margin:6px 0 0;">
+        VLAN/trunk, STP, routing (static/OSPF), firewall policy, VPN, Wi-Fi roaming
+      </p>
+    </div>
+    <div class="card" style="padding:12px;">
+      <b>Nâng cao</b>
+      <p class="muted" style="margin:6px 0 0;">
+        HA, segmentation, QoS, zero-trust mindset, automation (script), log correlation
+      </p>
+    </div>
+  </div>
+
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.10);margin:14px 0;">
+
+  <h4 style="margin:0 0 8px;">Toolbox (bộ đồ nghề)</h4>
+  <div class="mini-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+    <div class="card" style="padding:12px;">
+      <b>Chẩn đoán nhanh</b>
+      <p class="muted" style="margin:6px 0 0;">
+        ping • traceroute • nslookup/dig • ipconfig/ifconfig • netstat • arp • mtr
+      </p>
+    </div>
+    <div class="card" style="padding:12px;">
+      <b>Giám sát & phân tích</b>
+      <p class="muted" style="margin:6px 0 0;">
+        Wireshark • syslog • SNMP • Zabbix/PRTG • NetFlow (tuỳ nơi)
+      </p>
+    </div>
+  </div>
+
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.10);margin:14px 0;">
+
+  <h4 style="margin:0 0 8px;">Chứng chỉ (tham khảo)</h4>
+  <ul class="bullets" style="margin-top:8px;">
+    <li><b>Cơ bản:</b> CompTIA Network+ (nền tảng thuật ngữ & tư duy mạng)</li>
+    <li><b>Phổ biến:</b> Cisco CCNA (routing/switching nền tảng + lab tốt)</li>
+    <li><b>Theo hệ:</b> Juniper (JNCIA) / MikroTik (MTCNA) / các chứng chỉ Firewall tuỳ hãng</li>
+  </ul>
+  <p class="muted" style="margin-top:6px;">
+    *Chứng chỉ không bắt buộc, nhưng giúp bạn có “lộ trình học rõ” và dễ chứng minh năng lực khi xin internship/junior.
+  </p>
+
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.10);margin:14px 0;">
+
+  <h4 style="margin:0 0 8px;">Mini Project để đưa vào CV</h4>
+  <div class="mini-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+    <div class="card" style="padding:12px;">
+      <b>1) Mạng “công ty nhỏ”</b>
+      <p class="muted" style="margin:6px 0 0;">
+        Tách VLAN (Admin/Staff/Guest) + DHCP + DNS + rule chặn Guest vào nội bộ.
+      </p>
+    </div>
+    <div class="card" style="padding:12px;">
+      <b>2) VPN remote</b>
+      <p class="muted" style="margin:6px 0 0;">
+        Thiết lập VPN cho nhân sự làm từ xa + MFA (nếu có) + phân quyền theo nhóm.
+      </p>
+    </div>
+    <div class="card" style="padding:12px;">
+      <b>3) Monitoring</b>
+      <p class="muted" style="margin:6px 0 0;">
+        Dựng Zabbix/PRTG demo: theo dõi ping, CPU, interface traffic + cảnh báo email/telegram.
+      </p>
+    </div>
+    <div class="card" style="padding:12px;">
+      <b>4) Troubleshooting case</b>
+      <p class="muted" style="margin:6px 0 0;">
+        Viết 3 “case study”: DNS sai, DHCP hết lease, loop switch — mô tả triệu chứng → nguyên nhân → cách sửa.
+      </p>
+    </div>
+  </div>
+
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.10);margin:14px 0;">
+
+  <h4 style="margin:0 0 8px;">Lộ trình 30 ngày (gọn)</h4>
+  <ul class="bullets" style="margin-top:8px;">
+    <li><b>Tuần 1:</b> TCP/IP + subnetting + lab ping/traceroute/DNS (nắm thật chắc nền).</li>
+    <li><b>Tuần 2:</b> Switching: VLAN, trunk, STP (lab mô phỏng + vẽ sơ đồ mạng).</li>
+    <li><b>Tuần 3:</b> Routing + NAT + DHCP/DNS (mô hình “văn phòng nhỏ”).</li>
+    <li><b>Tuần 4:</b> Firewall policy + VPN + monitoring + viết tài liệu & checklist vận hành.</li>
+  </ul>
+</div>
+
+      <div class="modal__foot">
+        <button class="btn btn--primary" data-close="true">Đã hiểu</button>
+        <a class="btn btn--ghost" href="#podcast" data-close="true">Xem podcast</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
